@@ -1,0 +1,36 @@
+package org.firstinspires.ftc.teamcode.Systems;
+
+import com.pedropathing.drivetrain.DrivePowers;
+import com.pedropathing.follower.Follower;
+import com.pedropathing.follower.ManualDrive;
+import com.qualcomm.robotcore.hardware.Gamepad;
+
+public class Drive {
+
+    public void pedro_RC(Follower follower, Gamepad gamepad1) {
+        follower.manual(
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                -gamepad1.right_stick_x);
+    }
+
+    public void pedro_FC(Follower follower, Gamepad gamepad1) {
+        DrivePowers powers = ManualDrive.fieldCentric(
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                -gamepad1.right_stick_x,
+                follower.pose().heading());
+
+        follower.manual(powers);
+    }
+    public void pedro_FC_triggers(Follower follower, Gamepad gamepad1) {///de testat
+        double turn = gamepad1.right_trigger - gamepad1.left_trigger;
+        DrivePowers powers = ManualDrive.fieldCentric(
+                -gamepad1.left_stick_y,
+                -gamepad1.left_stick_x,
+                turn,
+                follower.pose().heading());
+
+        follower.manual(powers);
+    }
+}
