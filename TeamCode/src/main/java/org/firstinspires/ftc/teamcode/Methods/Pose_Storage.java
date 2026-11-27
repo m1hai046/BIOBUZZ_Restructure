@@ -1,8 +1,8 @@
 package org.firstinspires.ftc.teamcode.Methods;
 
+import com.pedropathing.math.Pose;
+
 public class Pose_Storage {
 
-    public static double lastX = 0.0;
-    public static double lastY = 0.0;
-    public static double lastHeading = 0.0;
+    public static Pose lastPose = new Pose(0,0,0);
 }
