@@ -1,8 +1,8 @@
-package org.firstinspires.ftc.teamcode.Methods;
+package org.firstinspires.ftc.teamcode.methods;
 
 import com.bylazar.telemetry.TelemetryManager;
 
-public class Robot_Methods {
+public class RobotMethods {
 
     public Robot_States robotState;
     public TelemetryManager telemetryM;
